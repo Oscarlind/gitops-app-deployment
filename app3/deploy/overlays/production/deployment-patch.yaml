@@ -1,0 +1,13 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app3-deployment
+spec:
+  replicas: 1
+  template:
+    spec:
+      containers:
+      - name: app3
+        env:
+        - name: ENV
+          value: "production"

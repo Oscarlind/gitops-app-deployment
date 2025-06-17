@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: app2
+  namespace: argocd-dev
+spec:
+  project: developer-apps
+  source:
+    repoURL: https://github.com/Oscarlind/gitops-app-deployment
+    targetRevision: HEAD
+    path: app2/deploy/overlays/development
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: app-2-pacman
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
