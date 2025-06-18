@@ -1,7 +1,0 @@
----
-kind: Namespace
-apiVersion: v1
-metadata:
-  name: app-1-pacman
-  labels:
-    name: pacman
